@@ -1,2 +1,2 @@
 # FacetsDataExplorer
-A universal XCOM extension that allows viewing and updating Facets data.
+A form to explore and update hierarchical XML data.
