@@ -1,6 +1,6 @@
 ﻿//ExplorerForm.cs
 //
-// Copyright © 2018 Mavidian Technologies Limited Liability Company. All Rights Reserved.
+// Copyright © 2018-2019 Mavidian Technologies Limited Liability Company. All Rights Reserved.
 
 using System;
 using System.Linq;
@@ -58,7 +58,7 @@ namespace FacetsDataExplorer
       /// <returns>true if data sucessfully assigned, false if submitted XML is invalid.</returns>
       public bool AssignFacetsData(string xmlData)
       {
-         XmlNodeData xmlNodeData = null;
+         XmlNodeData xmlNodeData;
          try { xmlNodeData = new XmlNodeData(xmlData); }
          catch (System.Xml.XmlException)
          {
@@ -93,8 +93,10 @@ namespace FacetsDataExplorer
       /// <returns></returns>
       private TreeNode CreateTreeNodeHierarchy(XmlNodeData hierarchyRoot)
       {
-         var newTreeNode = new TreeNode(hierarchyRoot.FullName);
-         newTreeNode.Tag = hierarchyRoot;  // //Tag property of each tree node contains a XmlNodeData object that describes node contents
+         var newTreeNode = new TreeNode(hierarchyRoot.FullName)
+         {
+            Tag = hierarchyRoot  // //Tag property of each tree node contains a XmlNodeData object that describes node contents
+         };
          foreach (var child in hierarchyRoot.Children) newTreeNode.Nodes.Add(CreateTreeNodeHierarchy(child));
          return newTreeNode;
       }

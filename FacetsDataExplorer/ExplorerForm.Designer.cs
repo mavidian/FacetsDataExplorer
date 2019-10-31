@@ -168,9 +168,9 @@
          this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
          this.MinimumSize = new System.Drawing.Size(265, 230);
          this.Name = "ExplorerForm";
-         this.Text = "FacetsData Explorer Form";
+         this.Text = "FacetsDataExplorer Form";
          this.toolTip1.SetToolTip(this, "Viewer and Editor of XML data, such as FacetsData exposed by Facets extensions.\r\n" +
-        "Copyright © 2018 Mavidian Technologies Limited Liability Company. All Rights Res" +
+        "Copyright © 2018-2019 Mavidian Technologies Limited Liability Company. All Rights Res" +
         "erved.");
          this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExplorerForm_FormClosed);
          this.Load += new System.EventHandler(this.ExplorerForm_Load);
